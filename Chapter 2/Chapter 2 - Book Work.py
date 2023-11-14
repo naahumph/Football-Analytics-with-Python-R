@@ -25,3 +25,24 @@ pbp_py_p['passing_yards'] = \
         pbp_py_p['passing_yards'].isnull(), 0, pbp_py_p['passing_yards']
         )
 
+# summarizing data
+pbp_py_p['passing_yards']\
+    .describe()
+
+# summarizing for the different pass types (long or short)
+pbp_py_p\
+    .query('pass_length_air_yards == "short"')['passing_yards']\
+    .describe()
+
+pbp_py_p\
+    .query('pass_length_air_yards == "long"')['passing_yards']\
+    .describe()
+
+# doing the same but with EPA
+pbp_py_p\
+    .query('pass_length_air_yards == "short"')['epa']\
+    .describe()
+
+pbp_py_p\
+    .query('pass_length_air_yards == "long"')['epa']\
+    .describe()
