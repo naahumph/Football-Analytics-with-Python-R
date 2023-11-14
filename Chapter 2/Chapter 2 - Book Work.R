@@ -16,3 +16,5 @@ pbp_r <- load_pbp(2016:2022)
 pbp_r_p <-
     pbp_r |>
     filter(play_type == "pass" & !is.na(airyards))
+
+# pausing R work; python mor relevant for me
