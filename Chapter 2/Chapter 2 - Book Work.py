@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 import nfl_data_py as nfl
 import seaborn as sns
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 # obtaining and filtering data
 seasons = range(2016, 2022 + 1) # add 1 because a python range does not include the 'stop' variable
@@ -53,5 +53,6 @@ pbp_py_p\
 # Plotting data - added imports to top (seaborn, matplotlib)
 
 # histograms
-sns.displot(data=pbp_py, x='passing_yards');
-plt.show();
+sns.displot(data=pbp_py, x='passing_yards')
+plt.show()
+
