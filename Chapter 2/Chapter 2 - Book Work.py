@@ -56,3 +56,21 @@ pbp_py_p\
 sns.displot(data=pbp_py, x='passing_yards')
 plt.show()
 
+# creating the black and white theme
+sns.set_theme(style='whitegrid',palette='colorblind')
+
+# filtering for only short passes
+pbp_py_p_short = \
+    pbp_py_p\
+    .query('pass_length_air_yards == "short"')
+
+# plot, change labels, then show output
+pbp_py_hist_short = \
+    sns.displot(data=pbp_py_p_short,
+                binwidth=1,
+                x='passing_yards')
+pbp_py_hist_short\
+    .set_axis_labels(
+        'Yards gained (or lost) during a passing play', 'Count'
+    )
+plt.show()
